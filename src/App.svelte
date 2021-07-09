@@ -1,5 +1,28 @@
 <script>
 
+let list = [i]
+i = 0;
+
+let count = 0;
+
+function addItem(){
+	list = [...list,0]
+}
+
+function countUp(){
+	list[i] = list[i]++;
+}
+
+function countDown(){
+	if(count >= 1){
+	  count--;
+	}
+}
+
+function countReset(){
+	count = 0;
+}
+
 function delete1(){
 	// 要素の削除
 	const div1 = document.getElementById("countboxs");
@@ -8,30 +31,6 @@ function delete1(){
 	}
 }
 
-let list = [0]
-let count = 0;
-
-
-function addItem(){
-	list = [...list,0]
-}
-
-
-function countUp(){
-	count ++;
-}
-
-function countDown(){
-	if(count >= 1){
-		count --;
-	}
-}
-
-function countReset(){
-	count = 0;
-}
-
-
 
   </script>
   
@@ -39,7 +38,7 @@ function countReset(){
 	<h1>Multiple Counter</h1>
 	<div class="main">
 		<div class="countboxs" id="countboxs">
-			{#each list as item}
+			{#each list as _item}
 	    <div class="countbox" id="countbox">
 	    	<div class="text">
 		        <input value="new">
@@ -58,7 +57,7 @@ function countReset(){
 		    <button class="addbutton" on:click={addItem}>new counter</button>
 	    </div>
 		<div class="sum">
-		    <span>sum of count:{count}</span>
+		    <span>sum of count:</span>
 	    </div>
     </div>
 </main>
