@@ -3,24 +3,26 @@
 let list = [i]
 i = 0;
 
-let count = 0;
+let count = [j];
+j = 0;
+
 
 function addItem(){
 	list = [...list,0]
 }
 
 function countUp(){
-	list[i] = list[i]++;
+	count[j] = count[j]++;
 }
 
 function countDown(){
 	if(count >= 1){
-	  count--;
+	 count[j] = count[j]--;
 	}
 }
 
 function countReset(){
-	count = 0;
+	count[j] = 0;
 }
 
 function delete1(){
